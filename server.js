@@ -1,7 +1,6 @@
 const config = require('./utils/config');
 const express = require('express')
 const app = express();
-const cors = require('cors')
 const courseRouter = require('./controllers/courses');
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware');
@@ -19,7 +18,7 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser:true, useUnifiedTopology:
   })
 
 
-app.use(cors());
+
 app.use(express.static('public'));
 app.use(express.json());
 
